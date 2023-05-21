@@ -1,0 +1,38 @@
+% !TeX root = ../whu-proposal-main.tex
+
+\section{如何使用此模版}
+
+此文件既是示例文件，也是模版的说明文档。本模版的使用方法如下：
+
+\subsection{如何选择本科或硕博的版本}
+
+在 \file{whu-proposal-main.tex} 的 \tn{documentclass} 命令中，type 选择 bachelor 或 master 或 doctor 选项，即可选择本科或硕博的版本。
+
+
+\subsection{个人信息}
+
+在 \file{whu-proposal-main.tex} 的 \tn{ProposalSetup} 命令中填写个人信息，包括姓名、学号、专业、研究方向、导师姓名、日期等信息。其中，题目、学院、学号和姓名为本科生必填信息，其他信息为研究生必填信息。
+
+
+\subsection{正文内容}
+
+个人推荐使用 \tn{input} 命令实现分章节编译，使得主文件（即本文件）结构更清晰（就像 \file{whu-proposal-main.tex} 文件的处理一样）。
+
+章节是三级结构，即 \tn{section}、\tn{subsection} 和 \tn{subsubsection}。
+
+如果不需要目录，可以将 \file{whu-proposal-main.tex} 文件的 \tn{tableofcontents} 命令注释掉。
+
+
+
+\subsection{参考文献}
+
+\subsubsection{如何引用参考文献}
+
+上标引用一篇文献\cite{xdyy}。
+
+行内引用一篇文献\parencite{xdyy}。
+
+
+\subsubsection{参考文献的编译方式}
+
+使用 \tool{biber} 编译参考文献，编译顺序为 \tool{xelatex} $\to$ \tool{biber} $\to$ \tool{xelatex} $\to$ \tool{xelatex}，或者使用 \tool{latexmk -xelatex whu-proposal-main} 编译。

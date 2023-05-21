@@ -1,0 +1,77 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+%********************************************
+% whu-proposal: 武汉大学开题报告模版
+
+% Github：https://github.com/whutug/whu-proposal
+% Gitee：https://gitee.com/xkwxdyy/whu-proposal
+% Update date: 2023-05-21
+% Version: v0.1
+% Author: Kangwei Xia, kangweixia_xdyy@163.com, School of Mathematics and Statistics, Wuhan University
+% QQ group: 681965476
+%********************************************
+
+
+% \documentclass[type = bachelor]{whu-proposal}  % 本科生
+% \documentclass[type = master]{whu-proposal}      % 硕士生
+\documentclass[type = doctor]{whu-proposal}      % 博士生
+
+
+% 个人信息
+\ProposalSetup{
+  title            = { 论文题目 } ,
+  department       = { 数学与统计学院 } ,
+  student_id       = { 2021202012345 } ,
+  author           = { 作者姓名 } ,
+  % 下面的内容只有【硕｜博】需要填写
+  major            = { 基础数学 } ,
+  research_area    = { 算子理论 } , 
+  supervisor       = { 导师姓名 } ,
+  supervisor_title = { 教授 } ,
+  year             = { 2023 },  % 年份不填写时默认为编译时的年份
+  month            = { 5 },     % 月份不填写时默认为编译时的月份
+  day              = { 21 },    % 日期不填写时默认为编译时的日期
+}
+
+
+% 载入所需宏包，下面的仅为示例文件中需要，实际使用时可根据需要增减
+
+% 参考文献
+\usepackage[
+  backend      = biber,
+  bibstyle     = gb7714-2015,
+  citestyle    = gb7714-2015
+]{biblatex}
+\addbibresource{whu-proposal.bib}  % 参考文献数据库
+
+
+
+% 自定义命令，下面的仅为示例文件中需要，实际使用时可根据需要增减
+\newcommand\tool{\texttt}
+\newcommand\tn[1]{\texttt{\textbackslash#1}}
+\newcommand\file{\nolinkurl}
+
+
+
+\begin{document}
+
+% 目录，不需要的话可去除
+\tableofcontents
+
+
+% 正文内容
+\input{body/motivation.tex}
+\input{body/usage.tex}
+\input{body/reference.tex}
+
+
+
+% 参考文献
+
+% \printbibliography  % “参考文献”一节标题不编号
+\printbibliography[heading = bibnumbered]  % “参考文献”一节标题编号
+
+
+\end{document}
