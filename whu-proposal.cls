@@ -32,12 +32,12 @@
 %   { }
 %   { \msg_fatal:nn { whu-proposal } { latex-too-old } }
 
-% % 检查编译引擎，要求使用 XeLaTeX。
-% \msg_new:nnn { whu-proposal } { incompatible-engine }
-%   { XeLaTeX~ is~ required~ to~ compile~ this~ document. }
+% 检查编译引擎，要求使用 XeLaTeX。
+\msg_new:nnn { whu-proposal } { incompatible-engine }
+  { XeLaTeX~ is~ required~ to~ compile~ this~ document. }
 
-% \sys_if_engine_xetex:F
-%   { \msg_fatal:nn { whu-proposal } { incompatible-engine } }
+\sys_if_engine_xetex:F
+  { \msg_fatal:nn { whu-proposal } { incompatible-engine } }
 
 
 % 使用 l3keys 定义 \ProposalSetup 配置命令
