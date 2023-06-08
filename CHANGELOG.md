@@ -19,3 +19,10 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Added
 
 - 增加“数学与统计学院研究生学位论文开题报告管理实施细则”
+
+
+## [v0.3] - 2023-06-08
+
+### Fixed
+
+- 修复不同版本 TeXLive 造成的 lastpage 的问题

@@ -8,7 +8,7 @@
 \RequirePackage { expl3 }
 \RequirePackage { xparse }
 \RequirePackage { l3keys2e }
-\ProvidesExplClass {whu-proposal} {2023-05-21} {v0.1} {LaTeX template for thesis proposal for students in Wuhan University}
+\ProvidesExplClass {whu-proposal} {2023-06-08} {v0.3} {LaTeX template for thesis proposal for students in Wuhan University}
 
 
 \bool_new:N \g__whuproposal_bachelor_type_bool  % 判断开题报告类型
@@ -81,11 +81,7 @@
 \AtEndOfPackageFile* { xeCJK }
   {
     \msg_redirect_name:nnn { xeCJK } { CJKfamily-redef } { none }
-    \defaultCJKfontfeatures
-      {
-        Script  = CJK,
-        % Mapping = fullwidth-stop ,
-      }
+    \defaultCJKfontfeatures { Script  = CJK }
   }
 
 % 载入 \cls{ctexart} 文档类。
@@ -505,14 +501,30 @@
       }
   }
 
-\cs_new:Npn \__whuproposal_lastpage_tmp_set:
+% 判断 lastpage 的版本
+\IfPackageAtLeastTF{lastpage}{2023-03-08}
   {
-    \bool_lazy_or:nnTF 
-      { \cs_if_eq_p:NN \lastpage@lastpage \__whuproposal_relax: }
-      { \str_if_eq_p:ee \lastpage@lastpage {??} }
-      { \int_set:Nn \l__whuproposal_tmp_int { 0 } }
-      { \int_set:Nn \l__whuproposal_tmp_int { \lastpage@lastpage } }
+    \cs_new:Npn \__whuproposal_lastpage_tmp_set:
+      {
+        \bool_lazy_or:nnTF 
+          { \cs_if_eq_p:NN \lastpage@lastpage \__whuproposal_relax: }
+          { \str_if_eq_p:ee \lastpage@lastpage {??} }
+          { \int_set:Nn \l__whuproposal_tmp_int { 0 } }
+          { \int_set:Nn \l__whuproposal_tmp_int { \lastpage@lastpage } }
+      }
   }
+  {
+    \cs_new:Npn \__whuproposal_lastpage_tmp_set:
+      {
+        \bool_lazy_or:nnTF 
+          { \cs_if_eq_p:NN \lastpage@lastpage \__whuproposal_relax: }
+          { \str_if_eq_p:ee \lastpage@lastpage {??} }
+          { \int_set:Nn \l__whuproposal_tmp_int { 0 } }
+          { \int_set:Nn \l__whuproposal_tmp_int { \int_eval:n { \lastpage@lastpage + 2 } } }
+      }
+  }
+
+
 \cs_new_nopar:Npn \__whuproposal_relax: { \relax }
 
 \dim_new:N \g__whuproposal_box_width_extra_dim   % box 的额外宽度
