@@ -6,12 +6,40 @@
 
 于是我基于《附件1：研究生学位论文开题报告登记表》开发了此模版，希望能够让同学们更方便、高效地完成开题报告的撰写。
 
-下面是示例文件：
+为了方便本硕博同学使用，本模版已将本硕博的开题报告整合，用户仅需根据自己的需求在 `\documentclass[type = ...]{whu-proposal} ` 的 `type` 中填写自己对应的类型即可（详见示例文件）
+
+
+## 下载
+
+1. 点击 [github 项目主页](https://github.com/whutug/whu-proposal) 右侧的 [releases](https://github.com/whutug/whu-proposal/releases) （或者 [gitee(https://gitee.com/xkwxdyy/whu-proposal)] 的发行版下方的最新版本（一般格式为 `vx.x - yyyy/mm/dd`，如 `v0.3 - 2023-06-09`）
+2. 点击 `Assets` 下的 `whu-proposal-vx.x.zip` 即可下载
+
+
+## 使用
+
+注意，本模版不包含 LaTeX 入门内容，比如 TeXLive 安装（见  [install-latex-guide-zh-cn](https://mirrors.cloud.tencent.com/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf) ） 和 LaTeX 基础入门（见 [lshort-zh-cn](https://mirrors.pku.edu.cn/ctan/info/lshort/chinese/lshort-zh-cn.pdf) ）
+
+### 离线使用
+
+本地安装 TeXLive ，然后下载后进行使用即可。
+
+
+### 在线使用
+
+#### TeXPage
+
+目前模版已经在 TeXPage 上申请成为模版：https://www.texpage.com/template/15c655db-e4d1-41d9-a595-c9969314e798 ，打开链接，点击 `使用此模板新建项目` 按钮即可
+
+#### Overleaf
+
+目前 Overleaf 的模版申请还未通过，不过用户可以通过上面的方法下载后手动上传项目使用
+
+## 示例文件
 
 ```latex
 % \documentclass[type = bachelor]{whu-proposal}  % 本科生
-% \documentclass[type = master]{whu-proposal}      % 硕士生
-\documentclass[type = doctor]{whu-proposal}      % 博士生
+\documentclass[type = master]{whu-proposal}      % 硕士生
+% \documentclass[type = doctor]{whu-proposal}      % 博士生
 
 
 % 个人信息
