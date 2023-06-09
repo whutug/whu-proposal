@@ -17,12 +17,13 @@
 
 ## 使用
 
-注意，本模版不包含 LaTeX 入门内容，比如 TeXLive 安装（见  [install-latex-guide-zh-cn](https://mirrors.cloud.tencent.com/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf) ） 和 LaTeX 基础入门（见 [lshort-zh-cn](https://mirrors.pku.edu.cn/ctan/info/lshort/chinese/lshort-zh-cn.pdf) ）
+注意，本模版不包含 LaTeX 入门内容，比如 TeXLive 安装（见  [install-latex-guide-zh-cn](https://mirrors.cloud.tencent.com/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf) ） 和 LaTeX 基础入门（见 [lshort-zh-cn](https://mirrors.pku.edu.cn/ctan/info/lshort/chinese/lshort-zh-cn.pdf) ）.
+
+模版中包含一个示例文件，也是模版的使用说明文件，请先阅读完再进行使用。
 
 ### 离线使用
 
 本地安装 TeXLive ，然后下载后进行使用即可。
-
 
 ### 在线使用
 
