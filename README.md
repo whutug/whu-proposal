@@ -33,7 +33,7 @@
 
 #### Overleaf
 
-目前 Overleaf 的模版申请还未通过，不过用户可以通过上面的方法下载后手动上传项目使用
+目前模版已经在 Overleaf 上申请成为模版：https://www.overleaf.com/latex/templates/whu-proposal-v0-dot-3/jbvjfypnxprh，打开链接，点击 `Open as Template` 按钮即可
 
 ## 示例文件
 

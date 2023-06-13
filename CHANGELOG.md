@@ -26,3 +26,10 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Fixed
 
 - 修复不同版本 TeXLive 造成的 lastpage 的问题
+
+
+## [v0.4] - 2023-06-13
+
+### Added
+
+- 增加 `Overleaf` 模版链接
