@@ -27,6 +27,8 @@
 
 ### 在线使用
 
+推荐使用 TeXPage（因为是国内的，所以速度一般会比 Overleaf 快）
+
 #### TeXPage
 
 目前模版已经在 TeXPage 上申请成为模版：https://www.texpage.com/template/15c655db-e4d1-41d9-a595-c9969314e798 ，打开链接，点击 `使用此模板新建项目` 按钮即可
