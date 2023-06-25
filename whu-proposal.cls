@@ -502,7 +502,7 @@
   }
 
 % 判断 lastpage 的版本
-\IfPackageAtLeastTF{lastpage}{2023-03-08}
+\IfPackageAtLeastTF{lastpage}{2023-01-01}
   {
     \cs_new:Npn \__whuproposal_lastpage_tmp_set:
       {

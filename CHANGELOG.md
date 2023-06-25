@@ -33,3 +33,10 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Added
 
 - 增加 `Overleaf` 模版链接
+
+
+## [v0.4] - 2023-06-25
+
+### Fixed
+
+- 修复最后两页的框的问题
