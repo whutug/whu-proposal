@@ -31,11 +31,11 @@
 
 #### TeXPage
 
-目前模版已经在 TeXPage 上申请成为模版：https://www.texpage.com/template/15c655db-e4d1-41d9-a595-c9969314e798 ，打开链接，点击 `使用此模板新建项目` 按钮即可
+目前模版已经在 [TeXPage](https://www.texpage.com/template/15c655db-e4d1-41d9-a595-c9969314e798) 上申请成为模版，打开链接，点击 `使用此模板新建项目` 按钮即可。
 
 #### Overleaf
 
-目前模版已经在 Overleaf 上申请成为模版：https://www.overleaf.com/latex/templates/whu-proposal-v0-dot-3/jbvjfypnxprh，打开链接，点击 `Open as Template` 按钮即可
+目前模版已经在 [Overleaf](https://www.overleaf.com/latex/templates/whu-proposal-v0-dot-3/jbvjfypnxprh) 上申请成为模版，打开链接，点击 `Open as Template` 按钮即可。
 
 ## 示例文件
 
