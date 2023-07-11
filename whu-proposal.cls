@@ -8,7 +8,7 @@
 \RequirePackage { expl3 }
 \RequirePackage { xparse }
 \RequirePackage { l3keys2e }
-\ProvidesExplClass {whu-proposal} {2023-06-29} {v0.4} {LaTeX template for thesis proposal for students in Wuhan University}
+\ProvidesExplClass {whu-proposal} {2023-07-12} {v0.5} {LaTeX template for thesis proposal for students in Wuhan University}
 
 
 \bool_new:N \g__whuproposal_bachelor_type_bool  % 判断开题报告类型
@@ -504,6 +504,7 @@
 % 判断 lastpage 的版本
 \IfPackageAtLeastTF{lastpage}{2023-01-01}
   {
+    % TeXLive 2023
     \cs_new:Npn \__whuproposal_lastpage_tmp_set:
       {
         \bool_lazy_or:nnTF 
@@ -514,13 +515,29 @@
       }
   }
   {
-    \cs_new:Npn \__whuproposal_lastpage_tmp_set:
+    \IfPackageAtLeastTF{lastpage}{2021-01-01}
       {
-        \bool_lazy_or:nnTF 
-          { \cs_if_eq_p:NN \lastpage@lastpage \__whuproposal_relax: }
-          { \str_if_eq_p:ee \lastpage@lastpage {??} }
-          { \int_set:Nn \l__whuproposal_tmp_int { 0 } }
-          { \int_set:Nn \l__whuproposal_tmp_int { \int_eval:n { \lastpage@lastpage + 2 } } }
+        % TeXLive 2022
+        \cs_new:Npn \__whuproposal_lastpage_tmp_set:
+          {
+            \bool_lazy_or:nnTF 
+              { \cs_if_eq_p:NN \lastpage@lastpage \__whuproposal_relax: }
+              { \str_if_eq_p:ee \lastpage@lastpage {??} }
+              { \int_set:Nn \l__whuproposal_tmp_int { 0 } }
+              { \int_set:Nn \l__whuproposal_tmp_int { \int_eval:n { \lastpage@lastpage + 2 } } }
+          }
+      }
+      {
+        % TeXLive 2021 及之前
+        \cs_new:Npn \box_ht_plus_dp:N #1 { \box_ht:N #1 + \box_dp:N #1 }
+        \cs_new:Npn \__whuproposal_lastpage_tmp_set:
+          {
+            \bool_lazy_or:nnTF 
+              { \cs_if_eq_p:NN \thepage \__whuproposal_relax: }
+              { \str_if_eq_p:ee \thepage {??} }
+              { \int_set:Nn \l__whuproposal_tmp_int { 0 } }
+              { \int_set:Nn \l__whuproposal_tmp_int { \int_eval:n { \lastpage@lastpage + 2 } } }
+          }
       }
   }
 

@@ -40,3 +40,11 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Fixed
 
 - 修复最后两页的框的问题
+
+
+
+## [v0.5] - 2023-07-12
+
+### Added
+
+- 兼容 TeXLive 2021
