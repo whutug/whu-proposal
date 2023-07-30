@@ -48,3 +48,11 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Added
 
 - 兼容 TeXLive 2021
+
+
+## [v0.6] - 2023-07-30
+
+
+### Fixed
+
+- 修复个人信息填写空白时的编译不停止的问题

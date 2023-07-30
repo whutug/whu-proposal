@@ -8,7 +8,7 @@
 \RequirePackage { expl3 }
 \RequirePackage { xparse }
 \RequirePackage { l3keys2e }
-\ProvidesExplClass {whu-proposal} {2023-07-24} {v0.5} {LaTeX template for thesis proposal for students in Wuhan University}
+\ProvidesExplClass {whu-proposal} {2023-07-30} {v0.6} {LaTeX template for thesis proposal for students in Wuhan University}
 
 
 \bool_new:N \g__whuproposal_bachelor_type_bool  % 判断开题报告类型
@@ -346,6 +346,31 @@
       };
   }
 % 个人信息
+
+% 对用户输入空格引发的报错进行处理
+\prg_generate_conditional_variant:Nnn \tl_if_blank:n { v } { T }
+
+\cs_new:Npn \__whuproposal_cover_master_doctor_infomation_preset:
+  {
+    \clist_map_inline:nn
+      {
+        department,
+        major,
+        research_area ,
+        student_id ,
+        author ,
+        supervisor ,
+        supervisor_title
+      }
+      {
+        \tl_if_blank:vT
+          { g__whuproposal_ ##1 _tl  }
+          {
+            \tl_set:cn { g__whuproposal_ ##1 _tl } { \textcolor{red}{待填写} }
+          }
+      }
+  
+  }
 \cs_new:Npn \__whuproposal_cover_master_doctor_infomation:
   {
     \node[] (information) at
@@ -356,6 +381,7 @@
         {
           \begin{minipage} [ c ] { \textwidth }
             \centering \zihao{3} \fangsong
+            \__whuproposal_cover_master_doctor_infomation_preset:
             \clist_set:Nn \l__whuproposal_tmpa_clist
               {
                 培养单位：,
