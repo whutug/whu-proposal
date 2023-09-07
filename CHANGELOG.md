@@ -56,3 +56,11 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Fixed
 
 - 修复个人信息填写空白时的编译不停止的问题
+
+
+## [v0.7] - 2023-09-07
+
+
+### Changed
+
+- 微调框的间距，防止垂直方向离文字太近

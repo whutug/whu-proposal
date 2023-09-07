@@ -8,7 +8,7 @@
 \RequirePackage { expl3 }
 \RequirePackage { xparse }
 \RequirePackage { l3keys2e }
-\ProvidesExplClass {whu-proposal} {2023-07-30} {v0.6} {LaTeX template for thesis proposal for students in Wuhan University}
+\ProvidesExplClass {whu-proposal} {2023-09-07} {v0.7} {LaTeX template for thesis proposal for students in Wuhan University}
 
 
 \bool_new:N \g__whuproposal_bachelor_type_bool  % 判断开题报告类型
@@ -571,11 +571,11 @@
 \cs_new_nopar:Npn \__whuproposal_relax: { \relax }
 
 \dim_new:N \g__whuproposal_box_width_extra_dim   % box 的额外宽度
-\dim_new:N \g__whuproposal_box_bottom_extra_dim  % box 的下面的额外高度
+\dim_new:N \g__whuproposal_box_height_extra_dim  % box 的下面的额外高度
 \dim_new:N \g__whuproposal_box_seperate_line_vertical_dim  % 分割线距离上方线的最终距离
 \dim_new:N \g__whuproposal_box_seperate_line_vertical_aux_dim  % 分割线距离上方线的距离
-\dim_set:Nn \g__whuproposal_box_width_extra_dim { 3pt }
-\dim_set:Nn \g__whuproposal_box_bottom_extra_dim { 5pt }
+\dim_set:Nn \g__whuproposal_box_width_extra_dim { 12pt }
+\dim_set:Nn \g__whuproposal_box_height_extra_dim { 6pt }
 \dim_set:Nn \g__whuproposal_box_seperate_line_vertical_aux_dim { 6.9ex }
 
 % 正文第一页的分割线距离处理
@@ -632,9 +632,9 @@
         -- 
         ([shift = {(0.1cm+\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_vertical_all_move_dim)}]current~page~text~area.north~east)
         --
-        ([shift = {(0.1cm+\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_vertical_all_move_dim-\g__whuproposal_box_bottom_extra_dim)}]current~page~text~area.south~east)
+        ([shift = {(0.1cm+\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_vertical_all_move_dim-\g__whuproposal_box_height_extra_dim)}]current~page~text~area.south~east)
         --
-        ([shift = {(-0.1cm-\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_vertical_all_move_dim-\g__whuproposal_box_bottom_extra_dim)}]current~page~text~area.south~west) -- cycle
+        ([shift = {(-0.1cm-\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_vertical_all_move_dim-\g__whuproposal_box_height_extra_dim)}]current~page~text~area.south~west) -- cycle
         ;
       % 分割线
       \draw ([shift = {(-0.1cm-\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_vertical_all_move_dim-\g__whuproposal_box_seperate_line_vertical_dim)}]current~page~text~area.north~west) 
@@ -646,13 +646,13 @@
 \cs_new:Npn \__whuproposal_box_after_first_page:
   {
     \begin{tikzpicture}[ remember~picture, overlay ]
-      \draw ([shift = {(-\g__whuproposal_box_width_extra_dim, 0em)}]current~page~text~area.north~west) 
+      \draw ([shift = {(-\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_height_extra_dim + 2pt)}]current~page~text~area.north~west) 
         -- 
-        ([shift = {(\g__whuproposal_box_width_extra_dim, 0em)}]current~page~text~area.north~east)
+        ([shift = {(\g__whuproposal_box_width_extra_dim, \g__whuproposal_box_height_extra_dim + 2pt)}]current~page~text~area.north~east)
         --
-        ([shift = {(\g__whuproposal_box_width_extra_dim, -\g__whuproposal_box_bottom_extra_dim)}]current~page~text~area.south~east)
+        ([shift = {(\g__whuproposal_box_width_extra_dim, -\g__whuproposal_box_height_extra_dim -4pt)}]current~page~text~area.south~east)
         --
-        ([shift = {(-\g__whuproposal_box_width_extra_dim, -\g__whuproposal_box_bottom_extra_dim)}]current~page~text~area.south~west) -- cycle
+        ([shift = {(-\g__whuproposal_box_width_extra_dim, -\g__whuproposal_box_height_extra_dim -4pt)}]current~page~text~area.south~west) -- cycle
         ;
     \end{tikzpicture}
   }
