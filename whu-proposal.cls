@@ -8,7 +8,7 @@
 \RequirePackage { expl3 }
 \RequirePackage { xparse }
 \RequirePackage { l3keys2e }
-\ProvidesExplClass {whu-proposal} {2023-09-07} {v0.7} {LaTeX template for thesis proposal for students in Wuhan University}
+\ProvidesExplClass {whu-proposal} {2023-09-26} {v0.8} {LaTeX template for thesis proposal for students in Wuhan University}
 
 
 \bool_new:N \g__whuproposal_bachelor_type_bool  % 判断开题报告类型
@@ -122,7 +122,7 @@
 \msg_new:nnn { whu-proposal } { package-conflict }
   { The~ "#2"~ package~ is~ incompatible~ with~ "#1". }
 
-\cs_new:Npn \gradingreference_package_conflict:nn #1#2
+\cs_new:Npn \whuproposal_package_conflict:nn #1#2
   {
     \AtEndOfPackageFile* {#1}
       {
@@ -131,18 +131,18 @@
       }
   }
 
-\gradingreference_package_conflict:nn { unicode-math } { amscd }
-\gradingreference_package_conflict:nn { unicode-math } { amsfonts }
-\gradingreference_package_conflict:nn { unicode-math } { amssymb }
-\gradingreference_package_conflict:nn { unicode-math } { bbm }
-\gradingreference_package_conflict:nn { unicode-math } { bm }
-\gradingreference_package_conflict:nn { unicode-math } { eucal }
-\gradingreference_package_conflict:nn { unicode-math } { eufrak }
-\gradingreference_package_conflict:nn { unicode-math } { mathrsfs }
-\gradingreference_package_conflict:nn { unicode-math } { newtxmath }
-\gradingreference_package_conflict:nn { unicode-math } { upgreek }
+\whuproposal_package_conflict:nn { unicode-math } { amscd }
+\whuproposal_package_conflict:nn { unicode-math } { amsfonts }
+\whuproposal_package_conflict:nn { unicode-math } { amssymb }
+\whuproposal_package_conflict:nn { unicode-math } { bbm }
+\whuproposal_package_conflict:nn { unicode-math } { bm }
+\whuproposal_package_conflict:nn { unicode-math } { eucal }
+\whuproposal_package_conflict:nn { unicode-math } { eufrak }
+\whuproposal_package_conflict:nn { unicode-math } { mathrsfs }
+\whuproposal_package_conflict:nn { unicode-math } { newtxmath }
+\whuproposal_package_conflict:nn { unicode-math } { upgreek }
 
-\gradingreference_package_conflict:nn { enumitem } { paralist }
+\whuproposal_package_conflict:nn { enumitem } { paralist }
 
 
 % 纸张和页面布局
@@ -195,6 +195,12 @@
             beforeskip = 2ex plus 0.5ex minus .5ex,
             afterskip  = 2ex plus .2ex minus 1ex,
           } ,
+        subsubsection =
+          {
+            format     = \zihao { 4 } \bfseries,
+            beforeskip = 2ex plus 0.5ex minus .5ex,
+            afterskip  = 2ex plus .2ex minus 1ex,
+          } ,
       }
   }
   {
@@ -207,13 +213,20 @@
             name        = {,、},
             aftername   = {},
             beforeskip = 2ex plus 1ex minus .5ex,
-            afterskip  = 1ex plus .2ex minus 1ex,
+            afterskip  = 2ex plus .2ex minus 1ex,
             tocline    = \chinese{#1}、#2
           } ,
         subsection =
           {
             format     = \zihao { -4 } \bfseries,
             beforeskip = 2ex plus 0.5ex minus .5ex,
+            afterskip = 1ex plus 0.5ex minus .5ex,
+          } ,
+        subsubsection =
+          {
+            format     = \zihao { -4 } \bfseries,
+            beforeskip = 2ex plus 0.5ex minus .5ex,
+            afterskip = 1ex plus 0.5ex minus .5ex,
           } ,
       }
   }

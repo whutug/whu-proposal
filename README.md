@@ -1,5 +1,10 @@
 # whu-proposal
 
+**注意**：开题报告上传系统的时候可能只能上传 `.doc` 文件，有以下解决办法：
+1. 将 LaTeX 编译生成的 PDF 转为图片（一般的 PDF 编辑器都可以做到）
+2. 将图片插入 `.doc` 或 `.docx` 文件中保存
+3. 上传系统
+
 ## 主要内容
 
 武汉大学本科生的开题报告模版已经[由 whu-tug 开发](https://github.com/whutug/whu-thesis)，但是研究生的模版仍然只有 word 版本，对于数学系的同学来说，相较于 LaTeX 来说，使用 word 进行排版数学公式并不是一件容易的事情。而且 LaTeX 使用 bib 数据库进行参考文献的管理，可以很方便地实现参考文献的引用。
@@ -35,7 +40,7 @@
 
 #### Overleaf
 
-目前模版已经在 [Overleaf](https://www.overleaf.com/latex/templates/wu-yi-da-xue-xue-wei-lun-wen-kai-ti-bao-gao-deng-ji-biao/jhjvjjycswnp) 上申请成为模版，打开链接，点击 `Open as Template` 按钮即可。
+目前模版已经在 [Overleaf](https://www.overleaf.com/latex/templates/whu-proposal-v0-dot-7/fhgjpzskjvhd) 上申请成为模版，打开链接，点击 `Open as Template` 按钮即可。
 
 ## 示例文件
 

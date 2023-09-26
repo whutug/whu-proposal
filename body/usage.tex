@@ -30,11 +30,16 @@
 
 \subsection{参考文献}
 
+模板已经提前配置好了 \pkg{biblatex} 宏包（见导言区）。如果你不会自己配置，只需要按照我下面的步骤来。
+
 \subsubsection{如何引用参考文献}
 
-上标引用一篇文献\cite{研究生学位论文开题报告登记表}。
+请将参考文献信息填入 \file{whu-proposal.bib} 文件中，然后根据需要在正文中使用 \tn{cite} 或者 \tn{parencite} 命令引用参考文献。例如：
+\begin{itemize}
+  \item \tn{cite}：上标引用一篇文献\cite[定理 1]{研究生学位论文开题报告登记表}。
 
-行内引用一篇文献\parencite{研究生学位论文开题报告登记表}。
+  \item \tn{parencite}：行内引用一篇文献 \parencite[定理 1]{研究生学位论文开题报告登记表}。
+\end{itemize}
 
 
 \subsubsection{参考文献的编译方式}
