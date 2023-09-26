@@ -64,3 +64,10 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Changed
 
 - 微调框的间距，防止垂直方向离文字太近
+
+
+## [v0.8] - 2023-09-26
+
+### Added
+
+- 增加上传系统的说明
