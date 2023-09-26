@@ -71,4 +71,5 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Added
 
 - 增加上传系统的说明
+- 增加对 `\cite` 和 `\parencite` 的处理
 - 增加 `biblatex` 包的预设键值

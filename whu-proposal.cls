@@ -810,3 +810,25 @@
     \skip_vertical:N \c__whuproposal_bachelor_baseline_skip
     \hfill 年 \qquad 月 \qquad 日
   }
+
+
+\AtEndPreamble
+  {
+    % gb7714-CCNU.cbx
+    \DeclareCiteCommand{\parencite}%[\mkbibbrackets]
+      {\mkbibleftborder\usebibmacro{cite:init}
+        \usebibmacro{prenote}}
+      {\usebibmacro{citeindex}
+        \usebibmacro{cite:comp}}
+      {}
+      {\usebibmacro{cite:dump}\setunit{\addcomma\addspace}\printfield{postnote}\mkbibrightborder}
+
+    \DeclareCiteCommand{\cite}[\mkbibsuperscript]%利用mkbibsuperbracket添加方括号
+      {\mkbibleftborder\usebibmacro{cite:init}
+      \usebibmacro{prenote}}
+      {\usebibmacro{citeindex}
+      \usebibmacro{cite:comp}}
+      {}
+      {\usebibmacro{cite:dump}\setunit{\addcomma\addspace}
+      \printfield{postnote}\mkbibrightborder}
+  }
