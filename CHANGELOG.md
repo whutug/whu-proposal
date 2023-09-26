@@ -71,3 +71,4 @@ Gitee：https://gitee.com/xkwxdyy/whu-proposal
 ### Added
 
 - 增加上传系统的说明
+- 增加 `biblatex` 包的预设键值
