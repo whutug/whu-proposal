@@ -8,7 +8,7 @@
 \RequirePackage { expl3 }
 \RequirePackage { xparse }
 \RequirePackage { l3keys2e }
-\ProvidesExplClass {whu-proposal} {2023-09-26} {v0.8} {LaTeX template for thesis proposal for students in Wuhan University}
+\ProvidesExplClass {whu-proposal} {2024-12-04} {v0.9} {LaTeX template for thesis proposal for students in Wuhan University}
 
 
 \bool_new:N \g__whuproposal_bachelor_type_bool  % 判断开题报告类型
@@ -286,6 +286,7 @@
     month .int_set:N = \g__whuproposal_month_int,
     % 日
     day .int_set:N = \g__whuproposal_day_int,
+    show-date .bool_set:N = \g__whuproposal_show_date_bool,
   }
 \keys_set:nn { whu-proposal }
   {
@@ -300,6 +301,7 @@
     year  = { \int_use:N \c_sys_year_int },
     month = { \int_use:N \c_sys_month_int },
     day   = { \int_use:N \c_sys_day_int },
+    show-date = true
   }
 
 % 封面
@@ -347,13 +349,18 @@
     \node [ anchor = south ] ( date ) at ( [shift = {(0em, 2.5em)}]current~page~text~area.south ) 
       {
         \zihao{3} \fangsong
-        \int_use:N \g__whuproposal_year_int
+        \bool_if:NT \g__whuproposal_show_date_bool
+          { \int_use:N \g__whuproposal_year_int }
         % \zhdigits { \int_use:N \g__whuproposal_year_int }
         \, 年 \,
-        \int_use:N \g__whuproposal_month_int
+        \bool_if:NTF \g__whuproposal_show_date_bool
+          { \int_use:N \g__whuproposal_month_int }
+          { \quad }
         % \zhnumber { \int_use:N \g__whuproposal_month_int }
         \, 月
-        \int_use:N \g__whuproposal_day_int
+        \bool_if:NTF \g__whuproposal_show_date_bool
+          { \int_use:N \g__whuproposal_day_int }
+          { \quad }
         % \zhnumber { \int_use:N \g__whuproposal_day_int }
         \, 日
       };
